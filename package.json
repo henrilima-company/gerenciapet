@@ -1,0 +1,75 @@
+{
+    "name": "gerencia-pet",
+    "displayName": "GerenciaPet",
+    "description": "GerenciaPet é um aplicativo de desktop desenvolvido com Electron.js e Vue.js, projetado para simplificar a gestão de informações em negócios relacionados a animais de estimação, como petshops e clínicas veterinárias.",
+    "author": {
+        "name": "Henri Lima",
+        "email": "henrilima.contactme@gmail.com",
+        "url": "https://github.com/henrilima/gerenciapet"
+    },
+    "version": "0.1.0",
+    "private": true,
+    "main": "main.js",
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "electron:dev": "concurrently \"yarn serve\" \"wait-on http://localhost:8080 && electron .\"",
+        "electron:build": "electron-builder"
+    },
+    "dependencies": {
+        "core-js": "^3.8.3",
+        "oh-vue-icons": "^1.0.0-rc3",
+        "sqlite3": "^5.1.7",
+        "toastr": "^2.1.4",
+        "vue": "^3.2.13",
+        "vue-router": "^4.0.3",
+        "vue-the-mask": "^0.11.1",
+        "vuex": "^4.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.16",
+        "@babel/eslint-parser": "^7.12.16",
+        "@vue/cli-plugin-babel": "~5.0.0",
+        "@vue/cli-plugin-eslint": "~5.0.0",
+        "@vue/cli-plugin-router": "~5.0.0",
+        "@vue/cli-plugin-vuex": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "concurrently": "^9.1.1",
+        "electron": "^33.2.1",
+        "electron-builder": "^25.1.8",
+        "electron-is-dev": "^3.0.1",
+        "eslint": "^7.32.0",
+        "eslint-plugin-vue": "^8.0.3",
+        "path": "^0.12.7",
+        "wait-on": "^8.0.1"
+    },
+    "build": {
+        "appId": "com.gerenciapet.app",
+        "productName": "GerenciaPet",
+        "directories": {
+            "output": "build_electron"
+        },
+        "files": [
+            "dist/**/*",
+            "main.js",
+            "preload.js",
+            "database.db",
+            "!dist/**/*.map"
+        ],
+        "extraResources": [
+            "src/assets/**/*"
+        ],
+        "win": {
+            "icon": "public/favicon.ico",
+            "target": "nsis"
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": true,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true
+        }
+    }
+}
