@@ -1,4 +1,4 @@
-# GerenciaPet
+# PROJETO COM PROBLEMA, correção em andamento - GerenciaPet
 Uma aplicação desenvolvida em **Electron** para gerenciar operações de um petshop e clínicas veterinárias de forma eficiente e prática. Este projeto foi criado com foco em aprendizado e experimentação com **Electron** e armazenamento local.
 
 ## 📜 Sobre o Projeto
