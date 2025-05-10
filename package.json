@@ -74,7 +74,8 @@
             "createDesktopShortcut": true,
             "createStartMenuShortcut": true,
             "shortcutName": "GerenciaPet",
-            "deleteAppDataOnUninstall": true
+            "deleteAppDataOnUninstall": true,
+            "runAfterFinish": true
         }
     }
 }
