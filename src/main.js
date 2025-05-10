@@ -1,7 +1,6 @@
 import * as Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
 import VueTheMask from "vue-the-mask";
 
 import "./assets/style.css";
@@ -61,7 +60,6 @@ app.config.globalProperties.$formatCurrency = (value) => {
 };
 
 app.use(VueTheMask);
-app.use(store);
 app.use(router);
 app.component("v-icon", OhVueIcon);
 app.mount("#app");

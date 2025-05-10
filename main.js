@@ -54,7 +54,7 @@ database.serialize(() => {
             database.run(
                 `
                 INSERT INTO administradores (nome, nascimento, sexo, numero, endereco, email)
-                VALUES ('Root', DATE('now'), 'Root', '--/--', '--/--','root@admin.com');
+                VALUES ('GerenciaPets', DATE('now'), 'GerenciaPets', '--/--', '--/--','gerenciapets@root');
             `
             );
         }

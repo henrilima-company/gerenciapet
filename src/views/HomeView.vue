@@ -3,7 +3,7 @@
         <div class="login-component">
             <img
                 class="image is-square is-1by1"
-                :src="mainImage"
+                :src="require('@/assets/img/cat-astronaut-amico.png')"
                 :draggable="false"
             />
             <div>
@@ -67,13 +67,11 @@
 
 <script>
 import toastr from 'toastr';
-import mainImage from '@/assets/img/cat-astronaut-amico.png';
 
 export default {
     name: "HomeView",
     data() {
         return {
-            mainImage,
             notSelected: true,
             lastSelected: null,
             administrators: [],

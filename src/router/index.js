@@ -1,5 +1,12 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory  } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import DashboardView from "../views/DashboardView.vue";
+import AddPet from "../views/AddPet.vue";
+import AddAdmin from "../views/AddAdmin.vue";
+import LoadingView from "../views/LoadingView.vue";
+import UserInfo from "../views/UserInfo.vue";
+import PetInfo from "../views/PetInfo.vue";
+import AddAndListRegisters from "../views/AddAndListRegisters.vue";
 
 const routes = [
     {
@@ -15,48 +22,47 @@ const routes = [
     {
         path: "/dashboard",
         name: "dashboard",
-        component: () => import("../views/DashboardView.vue"),
+        component: DashboardView,
     },
     {
         path: "/addpet",
         name: "addpet",
-        component: () => import("../views/AddPet.vue"),
+        component: AddPet,
     },
     {
         path: "/addadmin",
         name: "addadmin",
-        component: () => import("../views/AddAdmin.vue"),
+        component: AddAdmin,
     },
     {
         path: "/loading/:page/:page2?/:page3?/:page4?",
         name: "loading",
-        component: () => import("../views/LoadingView.vue"),
+        component: LoadingView,
     },
     {
         path: "/userinfo/:userid",
         name: "userinfo",
-        component: () => import("../views/UserInfo.vue"),
+        component: UserInfo,
     },
     {
         path: "/petinfo/:petid",
         name: "petinfo",
-        component: () => import("../views/PetInfo.vue"),
+        component: PetInfo,
     },
     {
         path: "/registers/:petid",
         name: "registers",
-        component: () => import("../views/AddAndListRegisters.vue"),
+        component: AddAndListRegisters,
     },
     { path: "/:pathMatch(.*)*", redirect: "/" },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
 });
 
 router.beforeEach((to, from, next) => {
-    // console.log(`Navegando de: ${from.fullPath} para: ${to.fullPath}`);
     next();
 });
 
